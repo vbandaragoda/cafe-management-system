@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.caffora.backend.CafforaBackendApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 5.900 s -- in com.caffora.backend.CafforaBackendApplicationTests

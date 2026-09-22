@@ -1,0 +1,62 @@
+name: caffora_mobile
+description: "Caffora — artisanal coffee ordering, on mobile. Flutter client for the Caffora Spring Boot backend."
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.3.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.8
+
+  # State management
+  provider: ^6.1.2
+
+  # Networking
+  http: ^1.2.2
+
+  # Local/session persistence
+  shared_preferences: ^2.3.2
+  sqflite: ^2.3.3+1
+  path: ^1.9.0
+  path_provider: ^2.1.4
+
+  # Connectivity + offline handling
+  connectivity_plus: ^6.0.5
+
+  # Device sensor feature #1: geolocation (nearest pickup / "use my location")
+  geolocator: ^13.0.1
+
+  # Device sensor feature #2 + camera: table-QR scanning to start a
+  # dine-in order (mobile_scanner) and admin's printable per-table QR
+  # codes (qr_flutter)
+  qr_flutter: ^4.1.0
+  mobile_scanner: ^5.2.3
+
+  # Explicit stored-contacts access: "Invite a friend" referral feature
+  flutter_contacts: ^1.1.9+2
+
+  # Runtime permission prompts (location, camera, contacts)
+  permission_handler: ^11.3.1
+
+  # Typography matching the Figma design (Outfit + Figtree)
+  google_fonts: ^6.2.1
+
+  # Date/time formatting for order timestamps
+  intl: ^0.19.0
+
+  # Cached network images with graceful offline fallback
+  cached_network_image: ^3.4.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/images/

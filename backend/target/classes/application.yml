@@ -1,0 +1,47 @@
+spring:
+  application:
+    name: caffora-backend
+
+  datasource:
+    url: jdbc:mysql://${DB_HOST:localhost}:${DB_PORT:3306}/${DB_NAME:caffora}?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
+    username: ${DB_USERNAME:caffora}
+    password: ${DB_PASSWORD:caffora}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: ${DDL_AUTO:update}
+    show-sql: ${SHOW_SQL:false}
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.MySQLDialect
+    open-in-view: false
+
+  jackson:
+    default-property-inclusion: non_null
+
+server:
+  port: ${SERVER_PORT:8080}
+  error:
+    include-message: always
+
+caffora:
+  jwt:
+    secret: ${JWT_SECRET:change-this-super-secret-key-before-deploying-to-prod-min-32-bytes}
+    expiration-ms: ${JWT_EXPIRATION_MS:86400000} # 24h
+    issuer: caffora-backend
+  cors:
+    allowed-origins: ${CORS_ALLOWED_ORIGINS:http://localhost:5173,http://localhost:3000}
+  pricing:
+    tax-rate: 0.08
+    pickup-fee: 0.50
+  admin:
+    seed-email: ${ADMIN_SEED_EMAIL:admin@caffora.com}
+    seed-password: ${ADMIN_SEED_PASSWORD:Admin@12345}
+    seed-name: ${ADMIN_SEED_NAME:System Admin}
+
+logging:
+  level:
+    root: INFO
+    com.caffora.backend: DEBUG
